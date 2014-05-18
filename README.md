@@ -1,20 +1,30 @@
 # Vectorails* by team L
-[*for NUS Orbital 2014*](http://orbital.comp.nus.edu.sg)
+\**tentative name*
 
-Possible Project goals
----------
+######[*for NUS Orbital 2014*](http://orbital.comp.nus.edu.sg)
+#####Current LOA: none :(
+#####Current aim: Восто́к
 
-Goals | Achieved?
-:------------ | :--------------:
-Use Ruby on Rails | ✓ 
-Secure logins with input validation & salted passwords | ✗ 
-Provide a RSS API | ✗ 
-Submit art to DeviantArt Sta.sh | ✗ 
-Ridiculously beautiful CSS | ✗
-Drop dead gorgeous CSS | ✗
-Decide on a licence for the project | ✗
-Actually fill this Readme with more useful information | ✗ 
-Come up with more project goals | ✗ 
-Actually get my lazy ass to start coding | ✗
+## Possible Project goals
 
-**tentative name*
+Level/Other | Goals | Achieved?
+:---:| :--- | :---:
+
+Восто́к | creation, retrieval, and deletion of records | ✗ 
+
+Project Gemini | Use Ruby on Rails | ✓ 
+Project Gemini | Secure logins with input validation & salted passwords | ✗ 
+Project Gemini | Submit art to DeviantArt Sta.sh | ✗ 
+Project Gemini | work properly on most common desktop/mobile platforms | ✗ 
+
+Apollo 11 | Figure out which of the communication goals to pick | ? 
+Apollo 11 | Unit testing | ? 
+Apollo 11 | Performance optimization | ✗ 
+
+??? | Provide a RSS API | ✗ 
+
+Other | Ridiculously beautiful CSS | ✗
+Other | Decide on a licence for the project | ✗
+Other | Actually fill this Readme with more useful information | ✗ 
+Other | Actually get my lazy ass to start coding | ✓
+
