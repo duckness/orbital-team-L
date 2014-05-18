@@ -11,6 +11,7 @@ Secure logins with input validation & salted passwords | ✗
 Provide a RSS API | ✗ 
 Submit art to DeviantArt Sta.sh | ✗ 
 Ridiculously beautiful CSS | ✗
+Drop dead gorgeous CSS | ✗
 Decide on a licence for the project | ✗
 Actually fill this Readme with more useful information | ✗ 
 Come up with more project goals | ✗ 
