@@ -7,7 +7,7 @@
 ######Current LOA: none :(
 ######Current aim: Восто́к
 
-## Possible project goals
+### Possible project goals
 
 Level/Other | Goals | Achieved?
 :---:| :--- | :---:
@@ -20,9 +20,15 @@ Apollo 11 | Figure out which of the communication goals to pick | ?
 Apollo 11 | Unit testing | ? 
 Apollo 11 | Performance optimization | ✗ 
 ??? | Provide a RSS API | ✗ 
-Other | Ridiculously beautiful CSS | ✗
+??? | Ridiculously beautiful CSS | ✗
+??? | Relevent JS for cool stuff | ✗
+Other | Use Postgresql for the project | ✓
 Other | Decide on a licence for the project | ✗
 Other | Actually fill this Readme with more useful information | ✗ 
 Other | Actually get my lazy ass to start coding | ✓
 
 \* *tentative name*
+
+## Installation
+
+to be written
