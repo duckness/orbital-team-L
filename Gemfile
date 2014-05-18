@@ -17,5 +17,7 @@ gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails', '3.1.0'
 gem 'turbolinks', '2.2.2'
 gem 'jbuilder', '2.0.7'
+gem 'sprockets', '2.11.0'
+gem 'bootstrap-sass', '3.1.1.1'
 
 gem 'sdoc', '~> 0.4.0',             group: :doc
