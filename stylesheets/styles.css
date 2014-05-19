@@ -21,7 +21,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size:28px;
+  font-size:32px;
 }
 
 h2 {
@@ -31,6 +31,7 @@ h2 {
 h3, h4, h5, h6 {
   color:#494949;
 }
+
 
 a {
   color:#39c;
@@ -218,6 +219,26 @@ footer {
   }
 }
 
+.closest {
+  line-height: 0;
+}
+
+.hovermsg{
+    display:none;
+    position:relative;
+    top:12px;
+    color: black;
+}
+
+.tabl{
+  position: relative;
+}
+
+.tabl:hover + .hovermsg{
+    display:block !important;
+    z-index:10;
+}
+
 @media print, screen and (max-width: 720px) {
   body {
     word-wrap:break-word;
@@ -253,3 +274,4 @@ footer {
     color:#444;
   }
 }
+
