@@ -1,34 +1,16 @@
 # Vectorails* by team L
+## Related information
 
-[*for NUS Orbital 2014*](http://orbital.comp.nus.edu.sg)
+Vectorails is a <insert description here>. It will be built using Ruby on Rails.
+The site was built as a project for [NUS Orbital 2014](http://orbital.comp.nus.edu.sg).
 
-## Project aims
+- [project goals](http://duckness.github.io/orbital-team-L/)
+- [project description](to be built)
+- [project site](to be built)
 
-######Current LOA: none :(
-######Current aim: Восто́к
-
-### Possible project goals
-
-Level/Other | Goals | Achieved?
-:---:| :--- | :---:
-Восто́к | creation, retrieval, and deletion of records | ✗ 
-Project Gemini | Use Ruby on Rails | ✓ 
-Project Gemini | Secure logins with input validation & salted passwords | ✗ 
-Project Gemini | Submit art to DeviantArt Sta.sh | ✗ 
-Project Gemini | work properly on most common desktop/mobile platforms | ✗ 
-Apollo 11 | Figure out which of the communication goals to pick | ? 
-Apollo 11 | Unit testing | ? 
-Apollo 11 | Performance optimization | ✗ 
-??? | Provide a RSS API | ✗ 
-??? | Ridiculously beautiful CSS | ✗
-??? | Relevent JS for cool stuff | ✗
-Other | Use Postgresql for the project | ✓
-Other | Decide on a licence for the project | ✗
-Other | Actually fill this Readme with more useful information | ✗ 
-Other | Actually get my lazy ass to start coding | ✓
-
-\* *tentative name*
 
 ## Installation
 
 to be written
+
+\* *tentative name*
