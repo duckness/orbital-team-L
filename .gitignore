@@ -30,3 +30,4 @@ database.yml
 doc/
 *.swp
 *~
+public/assets/*
