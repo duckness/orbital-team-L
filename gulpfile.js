@@ -1,6 +1,14 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
-var sass = require('gulp-sass');
+var shell = require('gulp-shell');
+var wait = require('gulp-wait');
+var paths = {
+  cssAssets:'app/assets/stylesheets/*.scss',
+  jsAssets: 'app/assets/javascripts/*.coffee',
+  erb:     ['app/views/**/*.erb', 'app/**/*.rb'],
+  cssF:     'public/assets/application.css',
+  jsF:      'public/assets/application.js'
+}
 
 // Point to rails server
 gulp.task('browser-sync', function() {
@@ -9,22 +17,33 @@ gulp.task('browser-sync', function() {
   });
 });
 
-// Inject CSS
-gulp.task('sass', function () {
-  gulp.src('app/assets/stylesheets/*.scss')
-  .pipe(sass({includePaths: ['scss']}))
-  .pipe(gulp.dest('css'))
+// for css
+gulp.task('css', function () {
+  gulp.src(paths.cssF)
+  .pipe(shell([ 
+    'rake assets:precompile'
+  ]))
+  .pipe(wait(3000))
   .pipe(browserSync.reload({stream:true}));
 });
 
+// for JS
+gulp.task('js', function () {
+  gulp.src(paths.jsF)
+  .pipe(shell([ 
+    'rake assets:precompile'
+  ]))
+  .pipe(wait(3000))
+  .pipe(browserSync.reload({stream:true, once: true}));
+});
 
-// Reload all Browsers, for changes in HTML
+// Reload all Browsers (html)
 gulp.task('bs-reload', function () {
   browserSync.reload();
 });
 
-// Watch scss AND html files, doing different things with each.
 gulp.task('default', ['browser-sync'], function () {
-  gulp.watch("*.scss", ['sass']);
-  gulp.watch("*.rb", ['bs-reload']);
+  gulp.watch(paths.cssAssets, ['css']);
+  gulp.watch(paths.jsAssets, ['js']);
+  gulp.watch(paths.erb, ['bs-reload']);
 });

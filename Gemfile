@@ -20,4 +20,6 @@ gem 'jbuilder', '2.0.7'
 gem 'sprockets', '2.11.0'
 gem 'bootstrap-sass', '3.1.1.1'
 
+gem "non-stupid-digest-assets"
+
 gem 'sdoc', '~> 0.4.0',             group: :doc
