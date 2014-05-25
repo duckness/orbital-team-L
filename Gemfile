@@ -19,6 +19,7 @@ gem 'turbolinks', '2.2.2'
 gem 'jbuilder', '2.0.7'
 gem 'sprockets', '2.11.0'
 gem 'bootstrap-sass', '3.1.1.1'
+gem 'bcrypt', '3.1.7'
 
 gem "non-stupid-digest-assets"
 
