@@ -13,13 +13,21 @@ Now you can clone the project to your PC.
 
 ### Rails setup
 * Install the gems in the directory:
-'''bundle install
+```
+bundle install
+```
 * create a datebase.yml file
 
 ### Browser-sync for testing
-'''npm install browser-sync --save-dev
+```
+npm install browser-sync --save-dev
+```
 then you can start the rails server
-'''rails s
+```
+rails s
+```
 which BS will use. Type:
-'''gulp
+```
+gulp
+```
 and you're done.
