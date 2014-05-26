@@ -1,16 +1,25 @@
-# Vectorails* by team L
+# Vectorails by team L
 ## Related information
 
-Vectorails is a \<insert description here\>. It will be built using Ruby on Rails.
-This site is currently being built as a project for [NUS Orbital 2014](http://orbital.comp.nus.edu.sg).
+This site is currently being built as a project for [NUS Orbital 2014](http://orbital.comp.nus.edu.sg). It will be built with Ruby on Rails.
 
-- [project goals](http://duckness.github.io/orbital-team-L/)
-- [project description](to be built)
+- [project definition](http://duckness.github.io/orbital-team-L/)
 - [project site](to be built)
 
 
 ## Installation
+You will need the following tools: postgresql, ruby rvm and rails, git, nodeJS, gulpJS, and git.
+Now you can clone the project to your PC.
 
-to be written
+### Rails setup
+* Install the gems in the directory:
+'''bundle install
+* create a datebase.yml file
 
-\* *tentative name*
+### Browser-sync for testing
+'''npm install browser-sync --save-dev
+then you can start the rails server
+'''rails s
+which BS will use. Type:
+'''gulp
+and you're done.
