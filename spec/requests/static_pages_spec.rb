@@ -8,7 +8,7 @@ describe "Static pages" do
     before { visit root_path }
 
     it { should have_content('wow such header') }
-    it { should have_title('Vectorails') }
+    it { should have_title('Cluttered') }
     it { should have_title('| Home') }
   end
 end
