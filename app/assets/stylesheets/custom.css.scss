@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
-
+$grayLighter: #eee;
 $gray-medium-light: #eaeaea;
 $gray-light-light: #f0f0f0;
 
@@ -65,13 +65,12 @@ p {
 
 #logo {
   padding-left: 0px;
-  position: absolute;
   text-align: left;
   margin: auto;
   font-size: 1.7em;
   color: $gray-light-light;
   text-transform: uppercase;
-  letter-spacing: -1px;
+  letter-spacing: 3px;
   font-weight: bold;
   &:hover {
     color: white;
