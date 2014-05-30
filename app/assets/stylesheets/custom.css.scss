@@ -1,8 +1,15 @@
-/* mixins, variables, etc. */
+@import "bootstrap";
 
+/* mixins, variables, etc. */
+$grayLighter: #eee;
 $gray-medium-light: #eaeaea;
 $gray-light-light: #f0f0f0;
-@import "bootstrap";
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 /* universal */
 
@@ -58,13 +65,12 @@ p {
 
 #logo {
   padding-left: 0px;
-  position: absolute;
   text-align: left;
   margin: auto;
   font-size: 1.7em;
   color: $gray-light-light;
   text-transform: uppercase;
-  letter-spacing: -1px;
+  letter-spacing: 3px;
   font-weight: bold;
   &:hover {
     color: white;
@@ -96,4 +102,45 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px ;
+    border-top: 1px solid $grayLighter;
+    
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
 }
