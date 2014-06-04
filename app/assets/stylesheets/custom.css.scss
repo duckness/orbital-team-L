@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
-$grayLighter: #eee;
+$gray-lighter: #eee;
 $gray-medium-light: #eaeaea;
 $gray-light-light: #f0f0f0;
 
@@ -12,6 +12,8 @@ $gray-light-light: #f0f0f0;
 }
 
 /* universal */
+
+
 
 html {
   overflow-y: scroll;
@@ -44,6 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3em;
+  font-weight: 700;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
@@ -119,7 +122,7 @@ footer {
 aside {
   section {
     padding: 10px ;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid $gray-lighter;
     
     &:first-child {
       border: 0;
@@ -145,13 +148,19 @@ aside {
   margin-right: 10px;
 }
 
-input, textarea, select, .uneditable-input {
+.createBtn {
+    white-space: normal;
+    text-align: center;
+}
+
+input:not([type="submit"]), textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
+  padding: 6px;
   @include box_sizing;
 }
 
 input {
-  height: 2em !important;
+  height: auto  !important;
 } 
