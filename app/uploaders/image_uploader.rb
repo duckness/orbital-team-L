@@ -2,13 +2,11 @@
 
 class ImageUploader < CarrierWave::Uploader::Base
 
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  # Include RMagick support:
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
-  # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -31,21 +29,41 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :resize_to_fit => [50, 50]
-  # end
+  # Create png version
+  version :png do
+    process :convert_to_png => [2000, 2000]
+  end
+
+  def convert_to_png (width,height)
+    manipulate! format: "png" do |img|
+      img.background "transparent"
+      img.units "PixelsPerInch"
+      img.density "300"
+      img.depth "8"
+      img.colorspace "sRGB"
+      img.resize "#{width}x#{height}"
+      img = yield(img) if block_given?
+      img
+    end
+  end
+
+  # Create thumbnail version
+  version :thumb, :from_version => :png do
+    process :resize_to_fit => [400, 400]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
-  # For images you might use something like this:
-  # def extension_white_list
-  #   %w(jpg jpeg gif png)
-  # end
+  def extension_white_list
+    %w(svg)
+  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+  def filename
+    if original_filename
+      @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
+      "#{@name}.#{file.extension}"
+    end
+  end
 
 end

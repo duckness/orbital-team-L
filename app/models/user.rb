@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :posts
   before_save { self.email = email.downcase }
 
   #Max lengths are to prevent name from being stupidly long and overflowing on pages, and the rest to prevent attacks on the server with megabyte length strings
