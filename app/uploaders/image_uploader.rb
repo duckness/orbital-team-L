@@ -11,7 +11,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "posts/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -35,13 +35,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def convert_to_png (width,height)
-    manipulate! format: "png" do |img|
-      img.background "transparent"
-      img.units "PixelsPerInch"
-      img.density "300"
-      img.depth "8"
-      img.colorspace "sRGB"
-      img.resize "#{width}x#{height}"
+    manipulate! do |img|
+      #img.combine_options do |cmd|
+        #cmd.background "rgba(255, 255, 255, 0.0)"
+        #cmd.units "PixelsPerInch"
+        #cmd.density "300"
+        #cmd.depth "8"
+        #cmd.colorspace "sRGB"
+        #cmd.resize "#{width}x#{height}"
+      #end
+      img.format(png)
       img = yield(img) if block_given?
       img
     end
