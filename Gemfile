@@ -23,6 +23,4 @@ gem 'bcrypt', '3.1.7'
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.7.0'
 
-gem "non-stupid-digest-assets"
-
 gem 'sdoc', '~> 0.4.0',             group: :doc
