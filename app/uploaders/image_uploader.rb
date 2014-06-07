@@ -31,18 +31,14 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create png version
   version :png do
-    process :convert_to_png => [2000, 2000]
+    process :convert => 'png'
   end
 
-  def convert_to_png (width,height)
+  def convert_to_png
     manipulate! do |img|
       #img.combine_options do |cmd|
-        #cmd.background "rgba(255, 255, 255, 0.0)"
-        #cmd.units "PixelsPerInch"
-        #cmd.density "300"
-        #cmd.depth "8"
+        #cmd.background "transparent"
         #cmd.colorspace "sRGB"
-        #cmd.resize "#{width}x#{height}"
       #end
       img.format(png)
       img = yield(img) if block_given?
