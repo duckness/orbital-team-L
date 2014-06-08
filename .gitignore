@@ -31,3 +31,5 @@ doc/
 *.swp
 *~
 public/assets/*
+public/uploads/*
+public/posts/*
