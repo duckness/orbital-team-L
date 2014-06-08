@@ -29,26 +29,37 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  # Create png version
-  version :png do
-    process :convert => 'png'
-  end
-
+  # the method we will be using to handle the uploaded vectors
   def convert_to_png
     manipulate! do |img|
-      #img.combine_options do |cmd|
-        #cmd.background "transparent"
-        #cmd.colorspace "sRGB"
-      #end
-      img.format(png)
+      img.format("png") do |cmd|
+        cmd.background "transparent"
+        cmd.colorspace "sRGB"
+      end
       img = yield(img) if block_given?
       img
+    end
+  end
+
+  def md5
+    chunk = model.send(mounted_as)
+    @md5 ||= Digest::MD5.hexdigest(chunk.read.to_s)
+  end
+
+  # Create png version
+  version :png do
+    process :convert_to_png
+    def full_filename (for_file = file)
+      "png_#{@md5}.png"
     end
   end
 
   # Create thumbnail version
   version :thumb, :from_version => :png do
     process :resize_to_fit => [400, 400]
+    def full_filename (for_file = file)
+      "th_#{@md5}.png"
+    end
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
