@@ -7,8 +7,12 @@
 
 <link rel="stylesheet" href="stylesheets/styles.css">
 <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script src="javascripts/js.js"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <!--[if lt IE 9]>
+<!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
@@ -41,8 +45,8 @@
     <p>Slide: #87 (if the g docs spreadsheet is correct)</p>
     <p>Ignition presentation:</p>
     <div class="videoWrapper">
-    <iframe width="100%" height="100%" frameborder="0" allowfullscreen
-              src="//www.youtube.com/embed/_YJRpfyxP4c?start=6500&end=6560"></iframe>
+      <iframe width="100%" height="100%" frameborder="0" allowfullscreen
+        src="//www.youtube.com/embed/_YJRpfyxP4c?start=6500&end=6560"></iframe>
     </div>
     <p></p>
 
@@ -137,124 +141,133 @@
     </ul>
     <h2>Time spent</h2>
     <p>You may check <a href="https://github.com/duckness/orbital-team-L/graphs/contributors">here</a> and <a href="https://github.com/chichaker/-orbital-team-L/graphs/contributors">here</a> to track our progress. Do note that Bjorn's learning repo was used which accounts for his high amounts of initial activity. Also, duckness = Bjorn and chichaker = Linh.</p>
-    <h3>Milestone 1</h3>
-    <h4>Piazza</h4>
-    <table>
-      <thead><tr>
-          <th align="left">Who</th>
-          <th align="left">Days online</th>
-          <th align="left">Posts viewed</th>
-          <th align="left">Contributions</th>
-      </tr></thead>
-      <tbody>
-      <tr>
-        <td align="left">Bjorn</td>
-        <td align="center">66</td>
-        <td align="center">149</td>
-        <td align="center">20</td>
-      </tr>
-      <tr>
-        <td align="left">Linh</td>
-        <td align="center">29</td>
-        <td align="center">149</td>
-        <td align="center">5</td>
-      </tr>
-      </tbody>
-    </table>
+    <div id="milestone">
+      <div class="accordionButton">Milestone 1</div>
+      <div class="accordionContent">
+        <h4>Piazza</h4>
+        <table>
+          <thead><tr>
+              <th align="left">Who</th>
+              <th align="left">Days online</th>
+              <th align="left">Posts viewed</th>
+              <th align="left">Contributions</th>
+          </tr></thead>
+          <tbody>
+          <tr>
+            <td align="left">Bjorn</td>
+            <td align="center">66</td>
+            <td align="center">149</td>
+            <td align="center">20</td>
+          </tr>
+          <tr>
+            <td align="left">Linh</td>
+            <td align="center">29</td>
+            <td align="center">149</td>
+            <td align="center">5</td>
+          </tr>
+          </tbody>
+        </table>
 
-    <h4>Dev</h4>
-    <p>The majority of the time spent was on learning Ruby on Rails. While learning RoR, we also added browser-sync to our workflow to vastly improve our testing speeds. Linh was away in Vietnam until mid June after liftoff and so was unable to attend some MC sessions.</p>
-    <table>
-      <thead><tr>
-          <th align="left">What</th>
-          <th align="left">When</th>
-          <th align="left">Bjorn</th>
-          <th align="left">Linh</th>
-          <th align="left">Remarks</th>
-      </tr></thead>
-      <tbody>
-      <tr>
-        <td align="left">Liftoff Day 1</td>
-        <td align="center">12/05</td>
-        <td align="center">8</td>
-        <td align="center">8</td>
-        <td align="left"></td>
-      </tr>
-      <tr>
-        <td align="left">Discussion and installation</td>
-        <td align="center">13/05</td>
-        <td align="center">3</td>
-        <td align="center">3</td>
-        <td align="left"></td>
-      </tr>
-      <tr>
-        <td align="left">Liftoff Day 2</td>
-        <td align="center">14/05</td>
-        <td align="center">8</td>
-        <td align="center">8</td>
-        <td align="left"></td>
-      </tr>
-      <tr>
-        <td align="left">Learning RoR &amp; asset pipeline</td>
-        <td align="center">15/05&mdash;</td>
-        <td align="center">16++</td>
-        <td align="center">16++</td>
-        <td align="left">Bjorn was learning and editing the site at the same time</td>
-      </tr>
-      <tr>
-        <td align="left">Mission Control #1</td>
-        <td align="center">20/05</td>
-        <td align="center">2</td>
-        <td align="center"></td>
-        <td align="left"></td>
-      </tr>
-      <tr>
-        <td align="left">RoR+GulpJS+Browser-sync</td>
-        <td align="center">24/05</td>
-        <td align="center">3</td>
-        <td align="center"></td>
-        <td align="left">no documentation, which made it take some time to do</td>
-      </tr>
-      <tr>
-        <td align="left">Basic functionality</td>
-        <td align="center">25/05&mdash;</td>
-        <td align="center">2++</td>
-        <td align="center">6++</td>
-        <td align="left">start collab on Bjorn's repo</td>
-      </tr>
-      <tr>
-        <td align="left">Evaluation Readme</td>
-        <td align="center">26/05&mdash;28/05</td>
-        <td align="center">4</td>
-        <td align="center">1</td>
-        <td align="left"></td>
-      </tr>
-      <tr>
-        <td align="left">Mission Control #2</td>
-        <td align="center">27/05</td>
-        <td align="center">2</td>
-        <td align="center"></td>
-        <td align="left">will try and implement AJAX in our site</td>
-      </tr>
-      <tr>
-        <td align="left">Designing mockup</td>
-        <td align="center">28/05</td>
-        <td align="center">1</td>
-        <td align="center"></td>
-        <td align="left">tentative</td>
-      </tr>
-      <tr>
-        <td align="left"><strong>Total:</strong></td>
-        <td align="center"></td>
-        <td align="center"><strong>48</strong></td>
-        <td align="center"><strong>42</strong></td>
-        <td align="left"></td>
-      </tr>
-      </tbody>
-    </table>
-
-    <!--p>Milestone 2: </p-->
-    <!--p>Milestone 3: </p-->
+        <h4>Dev</h4>
+        <p>The majority of the time spent was on learning Ruby on Rails. While learning RoR, we also added browser-sync to our workflow to vastly improve our testing speeds. Linh was away in Vietnam until mid June after liftoff and so was unable to attend some MC sessions.</p>
+        <table>
+          <thead><tr>
+              <th align="left">What</th>
+              <th align="left">When</th>
+              <th align="left">Bjorn</th>
+              <th align="left">Linh</th>
+              <th align="left">Remarks</th>
+          </tr></thead>
+          <tbody>
+          <tr>
+            <td align="left">Liftoff Day 1</td>
+            <td align="center">12/05</td>
+            <td align="center">8</td>
+            <td align="center">8</td>
+            <td align="left"></td>
+          </tr>
+          <tr>
+            <td align="left">Discussion and installation</td>
+            <td align="center">13/05</td>
+            <td align="center">3</td>
+            <td align="center">3</td>
+            <td align="left"></td>
+          </tr>
+          <tr>
+            <td align="left">Liftoff Day 2</td>
+            <td align="center">14/05</td>
+            <td align="center">8</td>
+            <td align="center">8</td>
+            <td align="left"></td>
+          </tr>
+          <tr>
+            <td align="left">Learning RoR &amp; asset pipeline</td>
+            <td align="center">15/05&mdash;</td>
+            <td align="center">16++</td>
+            <td align="center">16++</td>
+            <td align="left">Bjorn was learning and editing the site at the same time</td>
+          </tr>
+          <tr>
+            <td align="left">Mission Control #1</td>
+            <td align="center">20/05</td>
+            <td align="center">2</td>
+            <td align="center"></td>
+            <td align="left"></td>
+          </tr>
+          <tr>
+            <td align="left">RoR+GulpJS+Browser-sync</td>
+            <td align="center">24/05</td>
+            <td align="center">3</td>
+            <td align="center"></td>
+            <td align="left">no documentation, which made it take some time to do</td>
+          </tr>
+          <tr>
+            <td align="left">Basic functionality</td>
+            <td align="center">25/05&mdash;</td>
+            <td align="center">2++</td>
+            <td align="center">6++</td>
+            <td align="left">start collab on Bjorn's repo</td>
+          </tr>
+          <tr>
+            <td align="left">Evaluation Readme</td>
+            <td align="center">26/05&mdash;28/05</td>
+            <td align="center">4</td>
+            <td align="center">1</td>
+            <td align="left"></td>
+          </tr>
+          <tr>
+            <td align="left">Mission Control #2</td>
+            <td align="center">27/05</td>
+            <td align="center">2</td>
+            <td align="center"></td>
+            <td align="left">will try and implement AJAX in our site</td>
+          </tr>
+          <tr>
+            <td align="left">Designing mockup</td>
+            <td align="center">28/05</td>
+            <td align="center">1</td>
+            <td align="center"></td>
+            <td align="left">tentative</td>
+          </tr>
+          <tr>
+            <td align="left"><strong>Total:</strong></td>
+            <td align="center"></td>
+            <td align="center"><strong>48</strong></td>
+            <td align="center"><strong>42</strong></td>
+            <td align="left"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="accordionButton">Milestone 2</div>
+      <div class="accordionContent">
+        <p>in progress</p>
+      </div>
+      <div class="accordionButton">Milestone 3</div>
+      <div class="accordionContent">
+        <p>in progress</p>
+      </div>
+    </div>
   </section>
   <footer>
     <p>This project is maintained by <a href="https://github.com/duckness">Bjorn</a> and <a href="https://github.com/chichaker">Linh</a></p>

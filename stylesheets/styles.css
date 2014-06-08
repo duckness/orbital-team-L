@@ -254,6 +254,44 @@ footer {
   height: 100%;
 }
 
+#milestone {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  }
+ 
+.accordionButton {  
+  color:#494949;
+  font-size:1.17em;
+  font-weight:bold;
+  width: 100%;
+  float: left;
+  cursor: pointer;
+  text-align: center;
+  height: 30px;
+  
+  padding: 0;
+  padding-top:1px;
+  
+  background: #eee;
+  background: -moz-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#dddddd));
+  background: -webkit-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+  background: -o-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+  background: -ms-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+  background: linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+  
+  border-radius:5px;
+  border:1px solid #d2d2d2;
+  box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;
+  }
+ 
+.accordionContent { 
+  width: 100%;
+  float: left;
+  display: none;
+  }
+
 @media print, screen and (max-width: 720px) {
   body {
     word-wrap:break-word;
