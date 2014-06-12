@@ -15,7 +15,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.vector %></td>
+        <td><%= image_tag post.vector_url(:thumb) %></td>
         <td><%= post.description %></td>
         <td><%= post.user_id %></td>
         <td><%= link_to 'Show', post %></td>

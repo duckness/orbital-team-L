@@ -41,6 +41,17 @@ class ImageUploader < CarrierWave::Uploader::Base
     end
   end
 
+  # define how we will create the thumbnail
+  def resize_thumb
+    manipulate! do |img|
+      img.format("png") do |cmd|  # for some reason, it won't process properly eithout specifying the format to PNG, don't remove this!
+        cmd.resize "400x400"
+      end
+      img = yield(img) if block_given?
+      img
+    end
+  end
+
   def md5
     chunk = model.send(mounted_as)
     @md5 ||= Digest::MD5.hexdigest(chunk.read.to_s)
@@ -56,7 +67,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create thumbnail version
   version :thumb, :from_version => :png do
-    process :resize_to_fit => [400, 400]
+    process :resize_thumb
     def full_filename (for_file = file)
       "th_#{@md5}.png"
     end
