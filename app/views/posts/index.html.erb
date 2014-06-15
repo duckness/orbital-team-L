@@ -1,5 +1,4 @@
-<h1>Listing posts</h1>
-
+<% if false %><%# comments out the below section %>
 <table>
   <thead>
     <tr>
@@ -29,3 +28,14 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+<% end %>
+
+<section class = "gallery">
+  <% @posts.each_with_index do |post,idx| %>
+    <%= link_to post do %>
+      <figure tabindex="<%= idx + 1 %>">
+        <%= image_tag(post.vector_url(:thumb), alt: post.title) %>
+      </figure>
+    <% end %>
+  <% end %>
+</section>
