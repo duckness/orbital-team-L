@@ -11,15 +11,15 @@
         <% if signed_in? %>
         <li><%= link_to "Users", '#' %></li>
             <li id="fat-menu" class="dropdown">
-              <button class="btn dropdown-toggle sr-only" type="button" data-toggle="dropdown">Account<span class="caret"></span>
+              <button class="btn dropdown-toggle sr-only" type="button" data-toggle="dropdown" id = "accountDropdown">Account<span class="caret"></span>
               </button>
 
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <span class="caret"></span>
               </a>
-              <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+              <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelled-by= "accountDropdown">
                 <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", '#' %></li>
+                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li>
                   <%= link_to "Sign out", signout_path, method: "delete" %>
