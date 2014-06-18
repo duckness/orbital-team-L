@@ -49,13 +49,12 @@ textarea {
   figure {
     width: 440px;
     height: 440px;
-    line-height: 395px;
+    line-height: 400px;
     margin: 20px 20px 20px 20px;
     background: transparent;
     border: 20px solid transparent;
     display: inline-block;
     text-align: center;
-
 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -67,10 +66,10 @@ textarea {
     -o-box-shadow: 0 0 10px #222;
     box-shadow: 0 0 10px #222;
 
-    -webkit-transition: all 0.5s ease; 
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.25s ease; 
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
   }
 }
 
