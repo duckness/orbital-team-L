@@ -7,6 +7,11 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <%=render 'layouts/shim' %>
+    <link rel="apple-touch-icon" href="/touchicon.png">
+    <link rel="icon" href="/favicon.png">
+    <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
+    <meta name="msapplication-TileColor" content="#1b1b1b">
+    <meta name="msapplication-TileImage" content="/tileicon.png">
   </head>
   <body>
     <%=render 'layouts/header' %>
