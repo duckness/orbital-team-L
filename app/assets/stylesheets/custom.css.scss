@@ -130,6 +130,16 @@ p {
   }
 }
 
+.rsslogo {
+  display: inline-block;
+  max-height:20px; 
+  max-width:20px; 
+  fill: $gray-light-light;
+  &:hover {
+    fill: white;
+  }
+}
+
 /* footer */
 
 footer {
