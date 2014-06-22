@@ -193,17 +193,17 @@ input {
 
 /* pagination */
 
-.pagination > ul  {
+.pagination {
   display: inline-block;
   padding-left: 0;
   margin: 20px 0;
   border-radius: 4px;
 }
-.pagination > ul  > li {
+.pagination > ul > li {
   display: inline;
 }
-.pagination > ul  > li > a,
-.pagination > ul  > li > span {
+.pagination > ul > li > a,
+.pagination > ul > li > span {
   position: relative;
   float: left;
   padding: 6px 12px;
@@ -214,43 +214,43 @@ input {
   background-color: #fff;
   border: 1px solid #ddd;
 }
-.pagination > ul  > li:first-child > a,
-.pagination > ul  > li:first-child > span {
+.pagination > ul > li:first-child > a,
+.pagination > ul > li:first-child > span {
   margin-left: 0;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.pagination > ul  > li:last-child > a,
-.pagination > ul  > li:last-child > span {
+.pagination > ul > li:last-child > a,
+.pagination > ul > li:last-child > span {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-.pagination > ul  > li > a:hover,
-.pagination > ul  > li > span:hover,
-.pagination > ul  > li > a:focus,
-.pagination > ul  > li > span:focus {
+.pagination > ul > li > a:hover,
+.pagination > ul > li > span:hover,
+.pagination > ul > li > a:focus,
+.pagination > ul > li > span:focus {
   color: #2a6496;
   background-color: #eee;
   border-color: #ddd;
 }
-.pagination > ul  > .active > a,
-.pagination > ul  > .active > span,
-.pagination > ul  > .active > a:hover,
-.pagination > ul  > .active > span:hover,
-.pagination > ul  > .active > a:focus,
-.pagination > ul  > .active > span:focus {
+.pagination > ul >.active > a,
+.pagination > ul >.active > span,
+.pagination > ul >.active > a:hover,
+.pagination > ul >.active > span:hover,
+.pagination > ul >.active > a:focus,
+.pagination > ul >.active > span:focus {
   z-index: 2;
   color: #fff;
   cursor: default;
   background-color: #428bca;
   border-color: #428bca;
 }
-.pagination > ul  > .disabled > span,
-.pagination > ul  > .disabled > span:hover,
-.pagination > ul  > .disabled > span:focus,
-.pagination > ul  > .disabled > a,
-.pagination > ul  > .disabled > a:hover,
-.pagination > ul  > .disabled > a:focus {
+.pagination > ul >.disabled > span,
+.pagination > ul >.disabled > span:hover,
+.pagination > ul >.disabled > span:focus,
+.pagination > ul >.disabled > a,
+.pagination > ul >.disabled > a:hover,
+.pagination > ul >.disabled > a:focus {
   color: #999;
   cursor: not-allowed;
   background-color: #fff;

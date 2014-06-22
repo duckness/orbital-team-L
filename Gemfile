@@ -24,7 +24,7 @@ gem 'bootstrap-sass', '3.1.1.1'
 gem 'bcrypt', '3.1.7'
 gem 'faker', '1.3.0'
 gem 'will_paginate', '3.0.5'
-
+gem 'bootstrap-will_paginate', '0.0.9'
 gem "non-stupid-digest-assets"
 
 gem 'sdoc', '~> 0.4.0',             group: :doc
