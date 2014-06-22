@@ -4,12 +4,12 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "cluttered", root_path, id: "logo" %></li>
        
-      </ul>
+      </ul> 
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", '#' %> </li>
         <% if signed_in? %>
-        <li><%= link_to "Users", '#' %></li>
+        <li><%= link_to "Users", users_path %></li>
             <li id="fat-menu" class="dropdown">
               <button class="btn dropdown-toggle sr-only" type="button" data-toggle="dropdown" id = "accountDropdown">Account<span class="caret"></span>
               </button>
