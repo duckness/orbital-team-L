@@ -1,13 +1,27 @@
 class User < ActiveRecord::Base
-  before_save { self.email = email.downcase }
+	before_save { self.email = email.downcase }
+	before_create  :create_remember_token 
 
-  #Max lengths are to prevent name from being stupidly long and overflowing on pages, and the rest to prevent attacks on the server with megabyte length strings
+	validates :name,  presence: true, length: {maximum: 50}
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
+			uniqueness: { case_sensitive: false }
 
-  validates :name, presence: true, length: {  maximum: 50  }
+	has_secure_password
+	validates :password, length: { minimum: 8 }
+	validates :password_confirmation, presence: true
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, length: {  maximum: 512  }, uniqueness: {  case_sensitive: false  }
+	def User.new_remember_token
+    	SecureRandom.urlsafe_base64
+  	end
 
-  validates :password, length: {  minimum: 8, maximum: 512  }
-  has_secure_password
+  	def User.digest(token)
+    	Digest::SHA1.hexdigest(token.to_s)
+  	end
+
+	private
+
+		def create_remember_token
+			self.remember_token = User.digest(User.new_remember_token)
+		end
 end

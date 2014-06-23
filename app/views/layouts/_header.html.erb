@@ -1,11 +1,35 @@
 <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-  <div class="container-fluid">
+  <div class="container">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "vectorails", root_path, id: "logo" %></li>
-      </ul>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "cluttered", root_path, id: "logo" %></li>
+       
+      </ul> 
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Sign in", '#' %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", '#' %> </li>
+        <% if signed_in? %>
+        <li><%= link_to "Users", users_path %></li>
+            <li id="fat-menu" class="dropdown">
+              <button class="btn dropdown-toggle sr-only" type="button" data-toggle="dropdown" id = "accountDropdown">Account<span class="caret"></span>
+              </button>
+
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelled-by= "accountDropdown">
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Sign in", signin_path %></li>
+          <% end %>
+        
       </ul>
     </div>
   </div>
