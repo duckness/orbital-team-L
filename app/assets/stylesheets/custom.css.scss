@@ -1,7 +1,9 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
+
 $gray-lighter: #eee;
+
 $gray-medium-light: #eaeaea;
 $gray-light-light: #f0f0f0;
 
@@ -13,14 +15,13 @@ $gray-light-light: #f0f0f0;
 
 /* universal */
 
-
-
 html {
   overflow-y: scroll;
 }
 
 body {
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 section {
@@ -37,6 +38,57 @@ textarea {
     margin-bottom: 10px;
   }
 }
+
+/* main page */
+
+.gallery {
+  text-align: center;
+
+  a{
+    font-size: 0;
+  }
+
+  figure {
+    width: 440px;
+    height: 440px;
+    line-height: 400px;
+    margin: 20px 20px 20px 20px;
+    background: transparent;
+    border: 20px solid transparent;
+    display: inline-block;
+    text-align: center;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+
+    -webkit-box-shadow: 0 0 10px #222; 
+    -moz-box-shadow: 0 0 10px #222;
+    -o-box-shadow: 0 0 10px #222;
+    box-shadow: 0 0 10px #222;
+
+    -webkit-transition: all 0.25s ease; 
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+}
+
+figure:hover {
+  -webkit-box-shadow: 0 0 10px black; 
+  -moz-box-shadow: 0 0 10px black;
+  -o-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px black;
+}
+
+figure:focus {
+  -webkit-box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
+  -o-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px black;
+}
+
 
 /* typography */
 
@@ -82,6 +134,19 @@ p {
   }
 }
 
+.rsslogo {
+  display: inline-block;
+  max-height:20px; 
+  max-width:20px; 
+  fill: $gray-light-light;
+  &:hover {
+    fill: white;
+  }
+}
+/* header */
+nav div div ul li a {
+  height: 50px;
+}
 /* footer */
 
 footer {
@@ -124,7 +189,6 @@ aside {
   section {
     padding: 10px ;
     border-top: 1px solid $gray-lighter;
-    
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -256,3 +320,4 @@ input {
   background-color: #fff;
   border-color: #ddd;
 }
+
