@@ -6,7 +6,7 @@ This site is currently being built as a project for [NUS Orbital 2014](http://or
 
 
 ## Installation
-You will need the following tools: postgresql, ruby rvm and rails, git, nodeJS, gulpJS, and git.
+You will need the following tools: postgresql, ruby rvm and rails, git, nodeJS, gulpJS, imagemagick, and git.
 Now you can clone the project to your PC.
 ```
 git clone https://github.com/duckness/orbital-team-L.git
@@ -22,6 +22,12 @@ bundle install
 * you may want to precompile the assets files
 ```sh
 rake assets:precompile
+```
+
+### Imagemagick image manipulation
+You need Imagemagick compiled with librsvg support, on OSX with brew,
+```sh
+brew install imagemagick --with-librsvg
 ```
 
 ### Browser-sync for testing
