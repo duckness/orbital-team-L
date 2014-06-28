@@ -11,7 +11,15 @@ set :repo_url, 'git@github.com:duckness/orbital-team-L.git'
 set :deploy_to, '/home/duck/cluttered'
 
 # Default value for :scm is :git
-# set :scm, :git
+set :scm, :git
+set :branch, "master"
+
+set :user, "duck"
+set :use_sudo, false
+set:rails_env, "production"
+set :deploy_via, :copy
+set :pty, true
+# server "clutte.red", :app, :web, :db, :primary => true
 
 # Default value for :format is :pretty
 # set :format, :pretty
@@ -49,9 +57,9 @@ namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      within release_path do
-        execute :rake, 'cache:clear'
-      end
+      # within release_path do
+      #  execute :rake, 'cache:clear'
+      # end
     end
   end
 
