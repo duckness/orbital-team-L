@@ -21,6 +21,9 @@ gem 'jbuilder', '2.0.7'
 gem 'sprockets', '2.11.0'
 gem 'bootstrap-sass', '3.1.1.1'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 gem 'bcrypt', '3.1.7'
 gem 'faker', '1.3.0'
 gem 'will_paginate', '3.0.5'

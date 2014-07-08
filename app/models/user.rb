@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_many :authorizations
 	before_save { self.email = email.downcase }
 	before_create  :create_remember_token 
 
@@ -19,6 +20,13 @@ class User < ActiveRecord::Base
     	Digest::SHA1.hexdigest(token.to_s)
   	end
 
+  	def self.create_from_hash!(hash)
+  		randomPassword = SecureRandom.urlsafe_base64(6)
+	  	create(:name => hash['info']['name'], :email => hash['info']['email'], 
+	  		:password => randomPassword, :password_confirmation => randomPassword)
+	end
+
+	
 	private
 
 		def create_remember_token
