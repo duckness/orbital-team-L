@@ -63,10 +63,10 @@ textarea {
     -o-border-radius: 10px;
     border-radius: 10px;
 
-    -webkit-box-shadow: 0 0 10px #222; 
-    -moz-box-shadow: 0 0 10px #222;
-    -o-box-shadow: 0 0 10px #222;
-    box-shadow: 0 0 10px #222;
+    -webkit-box-shadow: 0 0 10px #888; 
+    -moz-box-shadow: 0 0 10px #888;
+    -o-box-shadow: 0 0 10px #888;
+    box-shadow: 0 0 10px #888;
 
     -webkit-transition: all 0.25s ease; 
     -moz-transition: all 0.25s ease;
@@ -135,14 +135,17 @@ p {
 }
 
 .rsslogo {
-  display: inline-block;
-  max-height:20px; 
-  max-width:20px; 
-  fill: $gray-light-light;
-  &:hover {
-    fill: white;
-  }
+  display: block;
+  position: relative;
+  float: left;
+  min-height:16px; 
+  min-width:16px;
+  max-height:16px; 
+  max-width:16px;
+  margin-top:15px;
+  margin-left:15px;
 }
+
 /* header */
 nav div div ul li a {
   height: 50px;
