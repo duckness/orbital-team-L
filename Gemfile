@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.2'
 gem 'rails', '4.1.1'
 
 group :development, :test do
@@ -21,6 +21,9 @@ gem 'jbuilder', '2.0.7'
 gem 'sprockets', '2.11.0'
 gem 'bootstrap-sass', '3.1.1.1'
 
+gem 'bcrypt', '3.1.7'
+gem 'carrierwave', '0.10.0'
+gem 'mini_magick', '3.7.0'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'

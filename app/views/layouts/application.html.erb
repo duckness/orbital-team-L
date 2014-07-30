@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:Condensed", media: "all", "data-turbolinks-track" => true %>  
     <%= stylesheet_link_tag "application", media: "all",
@@ -8,6 +9,12 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <%=render 'layouts/shim' %>
+    <link rel="apple-touch-icon" href="/touchicon.png">
+    <link rel="icon" href="/favicon.png">
+    <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
+    <meta name="msapplication-TileColor" content="#1b1b1b">
+    <meta name="msapplication-TileImage" content="/tileicon.png">
+    <%= auto_discovery_link_tag(:atom, posts_url(format: "atom")) %>
   </head>
   <body>
     <%=render 'layouts/header' %>
@@ -16,6 +23,8 @@
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
       <%= yield %>
+    </div>
+    <div class="container">
       <%=render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>
