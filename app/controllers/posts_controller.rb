@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user, except: [:index, :show]
+  before_action :correct_user, only: [:destroy, :update]
 
   # GET /posts
   # GET /posts.json
@@ -75,5 +77,10 @@ class PostsController < ApplicationController
   respond_to do |format|
     format.html
     format.atom
+  end
+
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to root_url if @post.nil?
   end
 end
