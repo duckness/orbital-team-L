@@ -12,7 +12,10 @@
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign in", '#' %></button></li>
+         <% if signed_in? %>
+         <%else%>
+        <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign in", signin_path %></button></li>
+        <%end%>
         <li><%= link_to posts_url(format: "atom") do %>
           <object type="image/svg+xml" data="RSS.svg" class="rsslogo">RSS</object>
         <% end %></li>
@@ -37,13 +40,10 @@
                 </li>
               </ul>
             </li>
-          <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+        
           <% end %>
 
-        <li><%= link_to posts_url(format: "atom") do %>
-          <object  type="image/svg+xml" data="RSS.svg" class="rsslogo">RSS</object>
-        <% end %></li>
+       
 
       </ul>
     </div>

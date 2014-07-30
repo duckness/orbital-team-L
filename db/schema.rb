@@ -16,11 +16,13 @@ ActiveRecord::Schema.define(version: 20140701103217) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
   create_table "authorizations", force: true do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -31,6 +33,8 @@ ActiveRecord::Schema.define(version: 20140701103217) do
     t.datetime "updated_at"
   end
 
+  add_index "posts", ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -38,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140701103217) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
+    t.boolean  "admin",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
