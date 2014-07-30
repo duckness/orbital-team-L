@@ -8,17 +8,16 @@ class SessionsController < ApplicationController
 	    if @auth.nil?
 		    # Create a new auth or add an auth 
 			@auth = Authorization.create_from_hash(auth)
-			
      	end
      	if signed_in?
      		if @auth.user == current_user
      			redirect_back_or current_user
-				flash[:warning] = "Already linked that account!"
+				flash[:warning] = "Already linked with #{@auth.provider.split('_').join(' ').capitalize}!"
 			else
 				@auth.user = current_user
 				@auth.save()
 				redirect_back_or current_user
-				flash[:success] = "Successfully linked that account!"
+				flash[:success] = "Successfully linked with #{@auth.provider.split('_').join(' ').capitalize}!"
 			end
 		else
 			if @auth.user.present?
@@ -26,10 +25,20 @@ class SessionsController < ApplicationController
 				redirect_back_or current_user
 				flash[:success] = "Signed in!"
 			else
-				Authorization.create_new_user_from_hash(auth, current_user)
-				sign_in current_user
-				redirect_back_or current_user
-				flash[:success] = 'Signed up' with #{@auth.provider}'
+				if (current_user = User.find_by(email: auth['info']['email']))
+					@auth.user = current_user
+					@auth.save()
+					sign_in current_user
+					redirect_back_or current_user
+					flash[:success] = "Signed in and linked with #{@auth.provider.split('_').join(' ').capitalize}"
+				else
+					current_user = Authorization.create_new_user_from_hash(auth, current_user)
+					@auth.user = current_user
+					@auth.save()
+					sign_in current_user
+					redirect_back_or current_user
+					flash[:success] = %Q[Signed up your new account with #{@auth.provider.split('_').join(' ').capitalize}. <br> You may want to change your password <a href="/user/#{current_user.id}/edit">here</a>].html_safe
+				end
 			end
 		end
   	end

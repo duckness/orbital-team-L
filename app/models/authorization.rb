@@ -9,8 +9,9 @@ class Authorization < ActiveRecord::Base
 	def self.create_from_hash(hash)
 	  	create(:uid => hash['uid'], :provider => hash['provider'])
 	end
-	def create_new_user_from_hash(hash,user = nil)
-		user ||= User.create_from_hash!(hash)
-	  	user.authorizations.create(:uid => hash['uid'], :provider => hash['provider'])
+	def self.create_new_user_from_hash(hash, current_user = nil)
+		current_user ||= User.create_from_hash!(hash)
+		auth = Authorization.create(:uid => hash['uid'], :provider => hash['provider'])
+		current_user
 	end
 end
