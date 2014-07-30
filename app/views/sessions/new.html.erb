@@ -13,6 +13,7 @@
 		    </div>  
 	      		<%= f.submit "Sign in", class: "btn btn-primary btn-lg" %>
 		<% end %><br>
-		<p>New user? <%= link_to "Sign up now!", signup_path %></p>
-	</div>
+		<p>New user? <%= link_to "Sign up now!", signup_path %>
+		<br>Or <%= link_to "log in using Facebook.", "/auth/facebook/" %> </p>
+		</div>
 </div>

@@ -9,3 +9,9 @@
     </section>
   </aside>
 </div>
+<% if (Rails.env.development?) %>
+	<%=	debug @user %>
+	<%= debug current_user %>
+	<%= debug Authorization.all %>
+  <%= debug User.all %> 
+<% end %>

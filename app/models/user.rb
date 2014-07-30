@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
 
-	has_many :posts
+	has_many :authorizations
 	before_save { self.email = email.downcase }
 	before_create  :create_remember_token 
 
-
+  has_many :posts
 	validates :name,  presence: true, length: {maximum: 50}
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
@@ -22,6 +22,13 @@ class User < ActiveRecord::Base
     	Digest::SHA1.hexdigest(token.to_s)
   	end
 
+  	def self.create_from_hash!(hash)
+  		randomPassword = SecureRandom.urlsafe_base64(6)
+	  	create(:name => hash['info']['name'], :email => hash['info']['email'], 
+	  		:password => randomPassword, :password_confirmation => randomPassword)
+	end
+
+	
 	private
 
 		def create_remember_token

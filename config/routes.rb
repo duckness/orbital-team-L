@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match "/auth/:provider/callback" ,to: "sessions#create_with_identity", via: [:get,:post]  
+  
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
