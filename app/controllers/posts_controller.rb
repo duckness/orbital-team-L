@@ -85,13 +85,11 @@ class PostsController < ApplicationController
 
   private
   def correct_user
-    if current_user.admin == false
+    if (current_user.admin?)
+    else
       @post = current_user.posts.find_by(id: params[:id])
       redirect_to posts_url if @post.nil?
       flash[:danger] = "You are not allowed to do that!"
-    else
-      @post
     end
-    
   end
 end
