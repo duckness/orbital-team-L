@@ -1,29 +1,40 @@
+<div class="row">
+	<aside class="col-xs-6 col-md-4">
+		<section>
+		<h1>
+			<%= @post.title %>
+		</h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+		<p>
 
-<p>
-  <%= image_tag @post.vector_url(:png) %>
-</p>
+			<%= link_to @post.vector_url(:png), target: "_blank" do %>
+			<%= image_tag @post.vector_url(:thumb) %>
+			<% end %>
+		</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
+		<p>
+			<h4>Description:</h4>
+			<% if (@post.description.blank?) %>
+			&nbsp;No description.
+			<% else %>
+			<%= @post.description %>
+			<% end %>
+		</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Destroy', post_path, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', posts_path %>
-
+		<p>
+			<h4>User: </h4>
+			&nbsp;<%=link_to(@post.user.name , @post.user) if @post.user_id?%>
+		</p>
+		<p>
+			<%= link_to 'Edit', edit_post_path(@post) %> |
+			<%= link_to 'Destroy', post_path, method: :delete, data: { confirm: 'Are you sure?' } %> |
+			<%= link_to 'Back', posts_path %>
+		</p>
+	</section>
+	</aside>
+</div>
 <% if (Rails.env.development?) %>
-	<%=	debug @post %>
-	<%= debug Post.all %>
-	
+<%=	debug @post %>
+<%= debug Post.all %>
+
 <% end %>

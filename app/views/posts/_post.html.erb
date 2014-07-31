@@ -1,0 +1,8 @@
+<li>
+  <span class="content"><%= link_to post, target: "_blank" do %>
+			<%= image_tag post.vector_url(:thumb) %>
+			<% end %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(post.created_at) %> ago.
+  </span>
+</li>

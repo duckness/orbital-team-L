@@ -6,8 +6,18 @@
         <%= gravatar_for @user,size: 40 %>
         <%= @user.name %>
       </h1>	
+         <% if @user.admin? %> <h5>Admin</h5> <%end%>
     </section>
   </aside>
+  <div class="col-xs-12 col-md-8">
+    <% if @user.posts.any? %>
+      <h3>Posts (<%= @user.posts.count %>)</h3>
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+      <%= will_paginate @posts %>
+    <% end %>
+  </div>
 </div>
 <% if (Rails.env.development?) %>
 	<%=	debug @user %>
