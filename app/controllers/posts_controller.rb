@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    
   end
 
   # GET /posts/1/edit
@@ -27,10 +28,11 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    @post.user = current_user
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        flash[:success]= 'Post was successfully created.'
+        format.html { redirect_to @post }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -44,7 +46,8 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        flash[:success]=  'Post was successfully updated.'
+        format.html { redirect_to @post }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -58,7 +61,8 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      flash[:success]=  'Post was successfully destroyed.'
+      format.html { redirect_to posts_url}
       format.json { head :no_content }
     end
   end
@@ -79,8 +83,15 @@ class PostsController < ApplicationController
     format.atom
   end
 
+  private
   def correct_user
-    @post = current_user.posts.find_by(id: params[:id])
-    redirect_to root_url if @post.nil?
+    if current_user.admin == false
+      @post = current_user.posts.find_by(id: params[:id])
+      redirect_to posts_url if @post.nil?
+      flash[:danger] = "You are not allowed to do that!"
+    else
+      @post
+    end
+    
   end
 end
