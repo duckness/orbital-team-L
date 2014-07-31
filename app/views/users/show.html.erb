@@ -12,6 +12,8 @@
 <% if (Rails.env.development?) %>
 	<%=	debug @user %>
 	<%= debug current_user %>
+  <%= debug @session %>
+  DISPLAY ALL:
 	<%= debug Authorization.all %>
   <%= debug User.all %> 
 <% end %>

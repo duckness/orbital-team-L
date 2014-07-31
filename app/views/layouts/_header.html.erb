@@ -1,51 +1,37 @@
 <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-  <div class="container">
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-
-        <li><%= link_to "cluttered", root_path, id: "logo" %></li>
-
-
-        <li><%= link_to "Upload", new_post_path %></li>
-        <li><%= link_to "About", "https://duckness.github.io/orbital-team-L/" %> </li>
-        <li><%= link_to "Help", help_path %> </li>
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-         <% if signed_in? %>
-         <%else%>
-        <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Sign in", signin_path %></button></li>
-        <%end%>
-        <li><%= link_to posts_url(format: "atom") do %>
-          <object type="image/svg+xml" data="RSS.svg" class="rsslogo">RSS</object>
-        <% end %></li>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", '#' %> </li>
-
-        <% if signed_in? %>
-        <li><%= link_to "Users", users_path %></li>
-            <li id="fat-menu" class="dropdown">
-              <button class="btn dropdown-toggle sr-only" type="button" data-toggle="dropdown" id = "accountDropdown">Account<span class="caret"></span>
-              </button>
-
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelled-by= "accountDropdown">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
-                </li>
-              </ul>
+   <div class="container">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav">
+            <li><%= link_to "cluttered", posts_path, id: "logo" %></li>
+            <li><%= link_to "Upload", new_post_path %></li>
+         </ul> 
+         <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home", posts_path %></li>
+            <li><%= link_to "About", "https://duckness.github.io/orbital-team-L/" %> </li>
+<% if signed_in? %>
+            <li><%= link_to "Users", users_path %></li>
+            <li class="dropdown">
+            <button class="btn dropdown-toggle sr-only" type="button" data-toggle="dropdown" id = "accountDropdown">Account<span class="caret"></span>
+            </button>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               Account <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelled-by= "accountDropdown">  
+               <li role = "presentation"><%= link_to "Profile", current_user , role: "menuitem", tabindex: "-1"%></li>
+               <li role = "presentation"><%= link_to "Settings", edit_user_path(current_user), role: "menuitem", tabindex: "-1" %></li>
+               <li class="divider"></li>
+               <li role = "presentation">
+                  <%= link_to "Sign out", signout_path, method: "delete", role: "menuitem", tabindex: "-1" %>
+               </li>
+            </ul>
             </li>
-        
-          <% end %>
-
-       
-
-      </ul>
-    </div>
-  </div>
+<% else %>
+            <li><%= link_to "Sign in", signin_path %></li>
+<% end %>
+            <li>
+               <object type="image/svg+xml" data="https://clutte.red/RSS.svg" class="rsslogo">RSS</object>
+            </li>
+         </ul>
+      </div>
+   </div>
 </nav>

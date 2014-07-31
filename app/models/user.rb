@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   	end
 
   	def self.create_from_hash!(hash)
-  		randomPassword = SecureRandom.urlsafe_base64(6)
+  		randomPassword = '123456'
 	  	create(:name => hash['info']['name'], :email => hash['info']['email'], 
 	  		:password => randomPassword, :password_confirmation => randomPassword)
 	end

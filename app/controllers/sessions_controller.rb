@@ -28,14 +28,14 @@ class SessionsController < ApplicationController
 				if (current_user = User.find_by(email: auth['info']['email']))
 					@auth.user = current_user
 					@auth.save()
-					sign_in current_user
+					sign_in @auth.user
 					redirect_back_or current_user
 					flash[:success] = "Signed in and linked with #{@auth.provider.split('_').join(' ').capitalize}"
 				else
 					current_user = Authorization.create_new_user_from_hash(auth, current_user)
 					@auth.user = current_user
 					@auth.save()
-					sign_in current_user
+					sign_in @auth.user
 					redirect_back_or current_user
 					flash[:success] = %Q[Signed up your new account with #{@auth.provider.split('_').join(' ').capitalize}. <br> You may want to change your password <a href="/user/#{current_user.id}/edit">here</a>].html_safe
 				end
