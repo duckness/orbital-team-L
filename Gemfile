@@ -12,6 +12,9 @@ group :test do
 	gem 'capybara', '2.2.1'
 	gem 'factory_girl_rails', '4.2.1'
 end
+group :production, :staging do
+    gem 'rails_12factor'
+end
 gem 'pg', '0.17.1'
 gem 'sass-rails', '4.0.3'
 gem 'uglifier', '2.5.0'
